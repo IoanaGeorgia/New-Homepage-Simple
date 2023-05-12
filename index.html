@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | News homepage</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    .bigWrapper {
+      z-index: 1;
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    .navigation {
+      width: 95%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2%;
+
+    }
+
+    .buttonWrapper {
+      font-size: 18px;
+      width: 30%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .buttonWrapper button {
+      background-color: transparent;
+      border: none;
+      margin-left: 2%;
+    }
+
+    .buttonWrapper button:hover {
+      color: hsl(35, 77%, 62%);
+      cursor: pointer;
+    }
+
+    .landingWrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+    }
+
+    .upperWrapper {
+      width: 95%;
+      padding-left: 2%;
+      padding-right: 2%;
+      display: flex;
+    }
+
+    .imageBigWrapper {
+      width: 80%;
+    }
+
+    .imageBigWrapper img {
+      width: 100%;
+    }
+
+    .underImageWrapper {
+      display: flex;
+      margin-top: 2%;
+    }
+
+    .imageTitle {
+      font-weight: 800;
+      font-size: 40px;
+      width: 50%;
+      padding-right: 5%;
+    }
+
+    .underImageSmallerWrapper {
+      display: flex;
+      flex-direction: column;
+      margin: 2%;
+    }
+
+    .underImageSmallerWrapper button {
+      background-color: hsl(5, 85%, 63%);
+      color: white;
+      width: 50%;
+      padding: 3%;
+      font-size: 20px;
+      margin-top: 5%;
+      border: none;
+    }
+
+    .underImageSmallerWrapper button:hover {
+      background-color: hsl(240, 100%, 5%);
+      cursor: pointer;
+    }
+
+    .smallText {
+      color: hsl(236, 13%, 42%);
+      font-size: 18px;
+    }
+
+    .sideWrapper {
+      background-color: hsl(240, 100%, 5%);
+      color: white;
+      padding: 2%;
+      display: flex;
+      flex-direction: column;
+      margin-left: 3%;
+    }
+
+    .sideWrapperTitle {
+      font-size: 40px;
+      color: hsl(35, 77%, 62%);
+    }
+
+    .sideWrapperDiv {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .sideElementWrapper {
+      width: 90%;
+      margin-top: 10%;
+      padding-bottom: 5%;
+      border-bottom: 2px solid grey;
+    }
+
+    .sideElementWrapper h5 {
+      font-size: 19px;
+      margin-bottom: 3%;
+
+    }
+
+    .sideElementWrapper h5:hover {
+      color: hsl(35, 77%, 62%);
+      cursor: pointer;
+    }
+
+    .lowerWrapper {
+      width: 100%;
+      display: flex;
+      margin: 2%;
+    }
+
+    .lowerWrapperElem {
+      display: flex;
+      margin-left: 2%;
+    }
+
+    .lowerWrapperSideElem {
+      margin-left: 3%;
+    }
+
+    .lowerWrapperSideElem div {
+      font-size: 30px;
+      color: hsl(236, 13%, 42%);
+      font-weight: 800;
+    }
+
+    .lowerWrapperSideElem p:nth-of-type(1) {
+      font-weight: 800;
+    }
+
+    .lowerWrapperSideElem p:nth-of-type(1):hover {
+      color: hsl(5, 85%, 63%);
+      cursor: pointer;
+    }
+
+    #navigationMobileImg {
+      display: none;
+    }
+
+    #navigationMobile {
+      display: none;
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      font-size: 11px;
+      color: hsl(228, 45%, 44%);
+    }
+
+    @media (min-width: 800px) {
+      #navigationMobile {
+        display: none !important;
+      }
+
+      .bigWrapper {
+        opacity: 100% !important;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .navigation {
+        width: 90%;
+        justify-content: space-between;
+      }
+
+      .buttonWrapper {
+        display: none;
+      }
+
+      .landingWrapper {
+        margin: 2%;
+      }
+
+      .landingWrapper,
+      .upperWrapper,
+      .imageBigWrapper .underImageWrapper,
+      .lowerWrapper {
+        width: 95%;
+        flex-direction: column;
+        margin-bottom: 10%;
+      }
+
+      .upperWrapper img,
+      .upperWrapper img,
+      .imageBigWrapper,
+      .imageTitle {
+        width: 100%;
+      }
+
+      .lowerWrapperElem {
+        margin-top: 10%;
+      }
+
+      .lowerWrapper img {
+        width: 40vw;
+      }
+
+      #navigationMobileImg {
+        display: inline;
+      }
+
+      #navigationMobile {
+        z-index: 2;
+        width: 70vw;
+        height: 100vh;
+        position: absolute;
+        top: 0%;
+        right: 0%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        display: none;
+        background-color: white;
+
+      }
+
+      #navigationMobile img {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 3%;
+        right: 14%;
+
+
+      }
+
+      .buttonWrapperMobile {
+        margin-top: 35%;
+        margin-left: 15%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        height: 60%;
+      }
+
+      .buttonWrapperMobile button {
+        background-color: transparent;
+        border: none;
+      }
+
+      .bigWrapper {
+        background-color: white;
+      }
+
+      body {
+        background-color: black;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <script>
+    function openMe() {
+      let big = document.getElementById('navigationMobile')
+      let under = document.getElementsByClassName('bigWrapper')[0]
+      under.style.opacity = '50%'
+      big.style.display = 'block'
+    }
+
+    function closeMe() {
+      let big = document.getElementById('navigationMobile')
+      big.style.display = 'none'
+      let under = document.getElementsByClassName('bigWrapper')[0]
+      under.style.opacity = '100%'
+    }
+  </script>
+
+  <div id="navigationMobile">
+    <img src="assets\images\icon-menu-close.svg" onclick="closeMe()">
+    <div class="buttonWrapperMobile">
+      <button> Home</button>
+      <button> New</button>
+      <button> Popular</button>
+      <button> Trending</button>
+      <button> Categories</button>
+    </div>
+  </div>
+  <div class="bigWrapper">
+
+
+    <div class="navigation">
+      <img src="assets\images\logo.svg">
+      <img id='navigationMobileImg' src='assets\images\icon-menu.svg' onclick="openMe()">
+      <div class="buttonWrapper">
+        <button> Home</button>
+        <button> New</button>
+        <button> Popular</button>
+        <button> Trending</button>
+        <button> Categories</button>
+      </div>
+    </div>
+
+    <div class="landingWrapper">
+      <div class="upperWrapper">
+
+        <div class="imageBigWrapper">
+          <img src="assets\images\image-web-3-desktop.jpg">
+          <div class="underImageWrapper">
+            <p class="imageTitle">The Bright Future of Web 3.0?</p>
+            <div class="underImageSmallerWrapper">
+              <p class="smallText"> We dive into the next evolution of the web that claims to put the power of the
+                platforms back into the hands of the people.
+                But is it really fulfilling its promise?</p>
+              <button> Read more</button>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="sideWrapper">
+          <h4 class="sideWrapperTitle">New</h4>
+
+          <div class="sideWrapperDiv">
+            <div class="sideElementWrapper">
+              <h5> Hydrogen VS Electric Cars</h5>
+              <p class="smallText"> Will hydrogen-fueled cars ever catch up to EVs?</p>
+            </div>
+
+            <div class="sideElementWrapper">
+              <h5> The Downsides of AI Artistry</h5>
+              <p class="smallText"> What are the possible adverse effects of on-demand AI image generation?
+              </p>
+            </div>
+
+            <div class="sideElementWrapper">
+              <h5> Is VC Funding Drying Up?</h5>
+              <p class="smallText"> Private funding by VC firms is down 50% YOY. We take a look at what that means.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="lowerWrapper">
+
+        <div class="lowerWrapperElem">
+          <img src="assets\images\image-retro-pcs.jpg">
+          <div class="lowerWrapperSideElem">
+            <div>01</div>
+            <p> Reviving Retro PCs</p>
+            <p class="smallText"> What happens when old PCs are given modern upgrades?</p>
+          </div>
+        </div>
+
+
+
+
+        <div class="lowerWrapperElem">
+          <img src="assets\images\image-top-laptops.jpg">
+          <div class="lowerWrapperSideElem">
+            <div>02</div>
+            <p> Top 10 Laptops of 2022</p>
+            <p class="smallText"> Our best picks for various needs and budgets.</p>
+          </div>
+        </div>
+
+
+
+        <div class="lowerWrapperElem">
+          <img src="assets\images\image-gaming-growth.jpg">
+          <div class="lowerWrapperSideElem">
+            <div>03</div>
+            <p> The Growth of Gaming</p>
+            <p class="smallText"> How the pandemic has sparked fresh opportunities.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Pascu Ioana-Georgia</a>.
+    </div>
+
+
+  </div>
+
+
+
+</body>
+
+</html>
